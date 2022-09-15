@@ -87,7 +87,6 @@ function chooseword(){
         }
       })
     }
-    console.log("Richtig: "+ordre)
 }
 //Wird ausgeführt, wenn der richtige Button gedrückt wurde.
 function trueanswer(){
@@ -130,11 +129,9 @@ function button1(){
     return
   }
   if (ordre == 1){//wenn dieser Button die richtige Antwort ist:
-    console.log("true");
     trueanswer();//Führe trueanswer() aus
   }
   else {//ansonsten:
-    console.log("false")
     falseanswer();//führe falseanswer() aus.
   }
   return
@@ -145,11 +142,9 @@ function button2(){
     return
   }
   if (ordre == 2){
-    console.log("true");
     trueanswer();
   }
   else {
-    console.log("false")
     falseanswer();
   }
   return
@@ -160,11 +155,9 @@ function button3(){
     return
   }
   if (ordre == 3){
-    console.log("true");
     trueanswer();
   }
   else {
-    console.log("false");
     falseanswer();
   }
   return
@@ -175,11 +168,9 @@ function button4(){
     return
   }
   if (ordre == 4){
-    console.log("true");
     trueanswer();
   }
   else {
-    console.log("false");
     falseanswer();
   }
 
