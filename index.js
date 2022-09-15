@@ -176,6 +176,10 @@ function button4(){
 
 }
 
+function accept() {
+  document.getElementById("banner").style.display = "none";
+}
+
 
 if (document.cookie!=""){
   progress = JSON.parse(document.cookie);
