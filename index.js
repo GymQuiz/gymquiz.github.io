@@ -56,7 +56,8 @@ function chooseword(){
       if (progress[j] === 1)
         summc=summc+1;
     }
-
+    document.getElementById("sumwrite").textContent = sumwrite + "/" + fullVociDE.length;
+    document.getElementById("summc").textContent = summc + "/"  + fullVociDE.length;
 
 
     if (progress[wordIndexFull]>1){ //Wenn Index grösser als 1-> Multiple Choice
