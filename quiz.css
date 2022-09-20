@@ -78,6 +78,10 @@ div {
     width: 60%; 
 }
 
-.progresss {
-    border-radius: 25px;
+/*Progressbar*/
+#mc{
+    width:0%;
+}
+#write{
+    width:0%;
 }
