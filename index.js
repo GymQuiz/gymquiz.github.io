@@ -225,10 +225,10 @@ function button4(){
 
 function accept() {
   document.getElementById("banner").style.display = "none";
-  setCookie(cookieaccept, true, 365);
+  setCookie("cookieaccept", true, 365);
 }
 //Cookiewarnung ausblenden, wenn sie schon akzeptiert wurde.
-if (getCookie(cookieaccept)==true){
+if (getCookie("cookieaccept")==true){
   document.getElementById("banner").style.display = "none";
 }
 //Das ganze ausführen:
