@@ -14,6 +14,36 @@ let eingabe;
 let sumwrite;
 let summc;
 
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie(cname) {
+  if (getCookie(cname) != "") {
+    return true;
+  } else {
+    return false;
+    }
+  }
+
 //Get a random Integer:
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
@@ -110,7 +140,7 @@ function trueanswer(){
   notactive=true;//Man kann nicht mehr antworten -> keine zweite Antwort möglich
   document.getElementById("right").style.display="flex";//Richtig Banner wird eingeblendet
   progress[wordIndexFull] = progress[wordIndexFull]-1;//Progress um 1 gesenkt
-  document.cookie=JSON.stringify(progress);
+  setCookie("cprogress", JSON.stringify(progress), 365);
   setTimeout(function() {//warte 800ms befor wieder chooseword() aufgerufen wird
     chooseword();
   }, 700);
@@ -121,8 +151,8 @@ function falseanswer(){
   document.getElementById("wrong").style.display="flex";//Falsch Banner einblenden
   progress[wordIndexFull] = progress[wordIndexFull]+1;//Progress um 1 erhöhen
   document.getElementById("rightword").textContent=enword;//richtiges Wort anzeigen
-  document.cookie=JSON.stringify(progress);
-  
+  setCookie("cprogress", JSON.stringify(progress), 365);
+
 }
 
 //wird ausgeführt wenn submit Button gedrückt wird
@@ -198,14 +228,16 @@ function accept() {
 }
 //Das ganze ausführen:
 
-if (document.cookie!=""){ //wenn gespeicherter Fortschritt vorhanden, diesen verwenden.
-  progress = JSON.parse(document.cookie);
+if (getCookie("cprogress")!=""){ //wenn gespeicherter Fortschritt vorhanden, diesen verwenden.
+  progress = JSON.parse(getCookie("cprogress"));
+  console.log("oldCookie")
   chooseword();
 }
 
 else{ //ansonsten neuen erstellen
   for (i=0; i<fullVociDE.length; i++){
     progress[i]=2
+    console.log("newCookie")
   }
 }
 
