@@ -138,6 +138,7 @@ function chooseword(){
   }
 //Wird ausgeführt, wenn der richtige Button gedrückt wurde.
 function trueanswer(){
+  document.getElementById("eingabe").value=""
   notactive=true;//Man kann nicht mehr antworten -> keine zweite Antwort möglich
   document.getElementById("right").style.display="flex";//Richtig Banner wird eingeblendet
   progress[wordIndexFull] = progress[wordIndexFull]-1;//Progress um 1 gesenkt
@@ -148,6 +149,7 @@ function trueanswer(){
 }
 //Wenn Falscher Button gedrückt wird:
 function falseanswer(){
+  document.getElementById("eingabe").value=""
   notactive=true;//Man kann nicht mehr antworten -> keine zweite Antwort möglich
   document.getElementById("wrong").style.display="flex";//Falsch Banner einblenden
   progress[wordIndexFull] = progress[wordIndexFull]+1;//Progress um 1 erhöhen
@@ -168,7 +170,6 @@ function submit(){
   else{ //ansonsten führe falseanswer() aus
     falseanswer();
   }
-  document.getElementById("eingabe").value=""
 }
 
 //wird bei klick auf den jeweiligen button ausgeführt:
