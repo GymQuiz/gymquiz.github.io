@@ -66,6 +66,7 @@ div {
 }
 
 .chooseanswer2 {
+    z-index: 50;
     font-size: 1.5em;
     font-weight: bold;
     color: rgb(85, 85, 85);
