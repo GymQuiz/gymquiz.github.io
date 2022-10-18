@@ -64,8 +64,8 @@ function getRandomIntEx(lengthOfArray,indexToExclude){
 //Generation of everythin:
 function chooseword(){
     if (progress[wordIndexFull]==0){ //Wenn der Progress dieses Wortes Null ist:
-      vociDe.splice(wordIndexFull,1); //Wort aus vociDe entfernen
-      vociEn.splice(wordIndexFull,1); //Wort aus vociEn entfernen
+      vociDe.splice(wordIndex,1); //Wort aus vociDe entfernen
+      vociEn.splice(wordIndex,1); //Wort aus vociEn entfernen
     }
     ordre = getRandomInt(1,5);
     document.getElementById("right").style.display="none"; //Richtig Banner ausblenden
@@ -228,7 +228,8 @@ function accept() {
   setCookie("cookieaccept", true, 365);
 }
 //Cookiewarnung ausblenden, wenn sie schon akzeptiert wurde.
-if (getCookie("cookieaccept")==true){
+if (getCookie("cookieaccept") == true){
+  console.log("accepted")
   document.getElementById("banner").style.display = "none";
 }
 //Das ganze ausführen:
