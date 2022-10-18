@@ -82,6 +82,7 @@ function chooseword(){
     for (let j = 0; j < progress.length; j++) {
       if (progress[j] === 0){
         sumwrite = sumwrite+1;
+        summc = summc+1
       }
       if (progress[j] === 1)
         summc=summc+1;
