@@ -85,3 +85,22 @@ div {
 .progresss {
     border-radius: 25px;
 }
+
+.winScreen {
+    padding: 5%;
+    box-shadow: 0px 0px 10px grey;
+    margin-top: 2%;
+    width: 80%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-bottom: 5%;
+}
+
+.winScreen img {
+    height: 20vh;
+}
+
+#finish{
+    display: none;
+}

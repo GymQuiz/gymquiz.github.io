@@ -89,7 +89,11 @@ function chooseword(){
     }
     document.getElementById("sumwrite").textContent = sumwrite + "/" + fullVociDE.length;
     document.getElementById("summc").textContent = summc + "/"  + fullVociDE.length;
-
+    if (sumwrite==fullVociDE.length){
+      document.getElementById("mc").style.display=none;
+      document.getElementById("write").style.display=none;
+      document.getElementById("finish").style.display=flex;
+    }
 
     if (progress[wordIndexFull]>1){ //Wenn Index grösser als 1-> Multiple Choice
         document.getElementById("choose").style.display="block";//choose einblenden
@@ -234,6 +238,16 @@ if (getCookie("cookieaccept") == true){
   console.log("accepted")
   document.getElementById("banner").style.display = "none";
 }
+
+function restart(){
+  alert("by continuing your Progress is getting deleted!")
+  for (i=0; i<fullVociDE.length; i++){
+    progress[i]=2
+  }
+  setCookie("cprogress", JSON.stringify(progress), 365);
+  location.reload(true);
+}
+
 //Das ganze ausführen:
 if (getCookie("cprogress")!=""){ //wenn gespeicherter Fortschritt vorhanden, diesen verwenden.
   progress = JSON.parse(getCookie("cprogress"));
