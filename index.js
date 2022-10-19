@@ -91,7 +91,7 @@ function chooseword(){
     document.getElementById("summc").textContent = summc + "/"  + fullVociDE.length;
 
     if (deword==undefined){
-      document.getElementById("mc").style.display="none";
+      document.getElementById("choose").style.display="none";
       document.getElementById("write").style.display="none";
       document.getElementById("finish").style.display="block";
     }
