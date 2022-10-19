@@ -95,12 +95,9 @@ div {
     border: 1px solid black;
     border-radius: 25px;
     margin-bottom: 5%;
+    display: :none;
 }
 
 .winScreen img {
     height: 20vh;
-}
-
-#finish{
-    display: none;
 }
