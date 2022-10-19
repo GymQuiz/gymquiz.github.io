@@ -90,7 +90,7 @@ function chooseword(){
     document.getElementById("sumwrite").textContent = sumwrite + "/" + fullVociDE.length;
     document.getElementById("summc").textContent = summc + "/"  + fullVociDE.length;
 
-    if (deword==undefined){
+    if (sumwrite==fullVociDE.length){
       document.getElementById("choose").style.display="none";
       document.getElementById("write").style.display="none";
       document.getElementById("finish").style.display="block";
