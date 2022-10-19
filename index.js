@@ -91,9 +91,9 @@ function chooseword(){
     document.getElementById("summc").textContent = summc + "/"  + fullVociDE.length;
 
     if (deword==undefined){
-      document.getElementById("mc").style.display=none;
-      document.getElementById("write").style.display=none;
-      document.getElementById("finish").style.display=block;
+      document.getElementById("mc").style.display="none";
+      document.getElementById("write").style.display="none";
+      document.getElementById("finish").style.display="block";
     }
 
     if (progress[wordIndexFull]>1){ //Wenn Index grösser als 1-> Multiple Choice
