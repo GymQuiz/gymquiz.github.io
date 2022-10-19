@@ -241,12 +241,20 @@ if (getCookie("cookieaccept") == true){
 }
 
 function restart(){
-  alert("by continuing your Progress is getting deleted!")
-  for (i=0; i<fullVociDE.length; i++){
-    progress[i]=2
+    if (window.confirm('Your progress will get deleted! Do you want do Continue?'))
+  {
+    for (i=0; i<fullVociDE.length; i++){
+      progress[i]=2
+    }
+    setCookie("cprogress", JSON.stringify(progress), 365);
+    location.reload(true);
+      // They clicked Yes
   }
-  setCookie("cprogress", JSON.stringify(progress), 365);
-  location.reload(true);
+  else
+  {
+    return
+      // They clicked no
+  }
 }
 
 //Das ganze ausführen:
