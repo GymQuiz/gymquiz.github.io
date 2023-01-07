@@ -176,7 +176,7 @@ function submit() {
         return
     }
     eingabe = document.getElementById("eingabe").value //Eingabe aus Input abrufen
-    if (eingabe == enword) { //Wenn input gleich englisches Wort führe trueanswer() aus
+    if (eingabe.toLowerCase() == enword.toLowerCase()) { //Wenn input gleich englisches Wort führe trueanswer() aus
         trueanswer();
     }
     else { //ansonsten führe falseanswer() aus
